@@ -8,7 +8,9 @@ Companion repository for Allera et al. (2023).
 ```py
 import ase.lattice
 import matplotlib.pyplot as plt
+
 from neighbor_maps import Atoms
+
 p = Atoms(ase.lattice.cubic.BodyCenteredCubic("Fe", size=(4,4,4)))
 plt.imshow(p.get_descriptor(atom_id=0, r_cut=6.0, img_target_size=32))
 plt.axis("off")
