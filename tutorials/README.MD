@@ -1,1 +1,1 @@
-The interactive version of the tutorial notebooks are available here: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pgrigorev/neighbors-maps.git/HEAD?labpath=tutorials%2Fdefect_detection.ipynb)
+The interactive version of the tutorial notebooks are available here: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pgrigorev/neighbors-maps.git/HEAD?labpath=tutorials)
