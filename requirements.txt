@@ -3,3 +3,4 @@ ase
 numpy
 matscipy
 scipy
+nglview
