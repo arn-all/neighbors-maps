@@ -8,4 +8,4 @@ cd neighbor-maps
 pip install -r requirements.txt
 ```  
 
-It might take a moment to install everything and after that you can simply launch JupyterLab by typing in `jupyter-lab` in your terminal. This will open an interface in your browser where you can open the notebook and start exploring. If you are familiar with github workflow please fill free to fork the repository and suggest your fixes and changes by creating a pull request.
+It might take a moment to install everything and after that you can simply launch JupyterLab by typing in `jupyter-lab` in your terminal. This will open an interface in your browser where you can open the notebook and start exploring. If you are familiar with github workflow please feel free to fork the repository and suggest your fixes and changes by creating a pull request.
