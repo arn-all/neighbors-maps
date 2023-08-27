@@ -22,9 +22,26 @@ def get_cutoff(atoms, n_neightbours, cutoff=10.):
     return first_atom_d[n_neightbours]
 
 def interactive_neighbour_map(structure, 
-                              target_atom_index = 0,
+                              target_atom_index=0,
                               target_img_size=32,
                               cutoff_factor=1.2):
+    """Plots equivalent graph on the left and resulting image on the right.
+       Hovering over nods shows the corresponding atom index and highlights
+       all connected edges and clicking on it will show the weights (1/distance)
+       for each edge and highlights the corresponding line on the image. 
+       Hovering over the image displays the information for each pixel: 
+       central atom index (row number), target atom index, distance and weight. 
+       Clicking on a pixel  highlights the row and corresponding node on the graph on the left part. 
+       To reset the selection click on the empty area of the plot.
+       This might sound a but complicated, just start playing with the  plot and you will understand it very quick.
+
+    Args:
+        structure (ase.Atoms): Atoms to build the map for.
+        target_atom_index (int, optional): Index of the central ato_. Defaults to 0.
+        target_img_size (int, optional): Target image size. Defaults to 32.
+        cutoff_factor (float, optional): Controls the number of neighbours 
+                                         for the central atom taken into account. Defaults to 1.2.
+    """    
 
     i, j, d = neighbour_list("ijd", structure, cutoff=cutoff_factor * get_cutoff(structure, target_img_size))
 
@@ -63,9 +80,10 @@ def interactive_neighbour_map(structure,
     mapper = LinearColorMapper(palette=Viridis256)
 
     p = figure(x_range=(-2, 2), y_range=(-2, 2),
-            x_axis_location=None, y_axis_location=None,
-            tools="hover, tap", tooltips="index: @index")
-
+               x_axis_location=None, y_axis_location=None,
+               tools="hover, tap", tooltips="index: @index")
+    
+    p.toolbar_location = None
     p.grid.grid_line_color = None
 
     graph = from_networkx(G, nx.spring_layout, scale=1.8, center=(0,0))
@@ -111,6 +129,8 @@ def interactive_neighbour_map(structure,
                 ('distance', '@distance')]
 
     img = figure(tools=())
+    img.toolbar_location = None
+
     color_mapper = LinearColorMapper(palette="Viridis256", low=image_weights.min(), high=image_weights.max())
 
     img.image(source=data, image="weights", color_mapper=color_mapper)
