@@ -74,7 +74,11 @@ def plot_neighbor_maps(systems, noise_amplitude, filename):
 
     fig.tight_layout() 
 
-    plt.savefig(filename, bbox_inches='tight')
+    plt.savefig(f"plots/pdf/{filename}.pdf", bbox_inches='tight')
+    plt.savefig(f"plots/png/{filename}.png", dpi=300, bbox_inches='tight')
+
+
+
 
 if __name__ == "__main__":
-    plot_neighbor_maps(systems, noise_amplitude, "all_structures.pdf")
+    plot_neighbor_maps(systems, noise_amplitude, "all_structures")

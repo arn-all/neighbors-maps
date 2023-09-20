@@ -42,4 +42,5 @@ for i, h in enumerate(hyperparams):
     axes[-1, i].set_xlabel(f"gamma = {h}")
 
 plt.tight_layout()
-plt.savefig("gamma_beta.pdf")
+plt.savefig("plots/pdf/gamma_beta.pdf")
+plt.savefig("plots/png/gamma_beta.png", dpi=300)

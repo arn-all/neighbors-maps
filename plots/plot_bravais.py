@@ -80,4 +80,5 @@ for i in range(num_subplots, num_rows * 4):
         axes[row, col].axis("off")
 
 plt.tight_layout()
-plt.savefig("bravais_lattices.pdf")
+plt.savefig("plots/pdf/bravais_lattices.pdf")
+plt.savefig("plots/png/bravais_lattices.png", dpi=300)

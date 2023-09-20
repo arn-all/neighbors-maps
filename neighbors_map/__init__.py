@@ -1,0 +1,1 @@
+from neighbors_map.neighbors_map import Atoms
