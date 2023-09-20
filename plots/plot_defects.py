@@ -69,5 +69,6 @@ for (structure_type, structure), ax in zip(interstitials.items(), axes[2]):
 
     
 fig.tight_layout()
-
+plt.savefig("plots/pdf/plot_defects.pdf")
+plt.savefig("plots/pdf/plot_defects.png", dpi=300)
 plt.show()
