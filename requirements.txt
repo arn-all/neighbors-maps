@@ -1,0 +1,9 @@
+matplotlib
+ase
+numpy
+matscipy
+scipy
+nglview
+networkx
+pandas
+bokeh
